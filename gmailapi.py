@@ -74,6 +74,7 @@ def get_message_lists( service, label_filter, max_page=10):
     for i in range(0,max_page):
         logger.info(i)
         nextpage = results.get('nextPageToken', None)
+        # TODO: missing last page
         if nextpage:
             results = service.users().messages().list(userId='me',labelIds=label_id,pageToken=nextpage).execute()
             messages.extend(results['messages'])
