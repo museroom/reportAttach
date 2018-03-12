@@ -8,8 +8,10 @@ logger = logging.getLogger('readhtml')
 
 filename = os.path.join(
     'assets',
-    '20180309 OutdoorLightingChecklist at 1930.docx',
-    '20180309OutdoorLightingChecklistat1930.docx.html',
+    '20170617 Outdoor lighting checklist 1530',
+    '20170617Outdoorlightingchecklist1530.docx.html',
+    # '20180309 OutdoorLightingChecklist at 1930.docx',
+    # '20180309OutdoorLightingChecklistat1930.docx.html',
 )
 
 
@@ -38,7 +40,7 @@ def get_tables(tree):
 
 
 def main():
-    f = open(filename, 'r')
+    f = open(filename, 'rb')
     # parser = etree.HTMLParser()
     # tree = etree.parse(f, parser)
     tree = lxml.html.parse(f)
